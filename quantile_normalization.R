@@ -1,0 +1,6 @@
+library('preprocessCore')
+data <- read.csv("hpec.csv")
+data_mat <- as.matrix(data)
+data_norm <- normalize.quantiles(data_mat, copy = TRUE)
+View(data_norm)
+write.csv(data_norm, file="hpec_normalizado.csv")
